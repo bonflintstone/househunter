@@ -14,6 +14,9 @@ gem 'delayed_job_recurring'
 gem 'daemons'
 gem 'nokogiri'
 gem 'httparty'
+gem 'slim-rails'
+gem 'letter_opener'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

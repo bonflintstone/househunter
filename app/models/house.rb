@@ -1,11 +1,11 @@
 class House < ApplicationRecord
   validates :name, uniqueness: true
 
-  after_create :check_house
+  after_create :notify
 
   private
 
-  def check_house
-    CheckJob.new(houe).perform
+  def notify
+    NotifyMailer.new_apartment(self).deliver_now
   end
 end
