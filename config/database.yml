@@ -10,3 +10,9 @@ development:
 test:
   <<: *default
   database: househunter_test
+
+production:
+  <<: *default
+  database: househunter_production
+  username: househunter
+  password: <%= ENV['HOUSEHUNTER_DATABASE_PASSWORD'] %>
