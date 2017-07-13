@@ -1,0 +1,1 @@
+ScrapeJob.new.delay.perform
