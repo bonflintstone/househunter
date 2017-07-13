@@ -3,7 +3,11 @@ class ScrapeJob
   BASE_PATH = '/ik-zoek/vrije-sector-huurwoningen/nutehuur/lijst/670/pagina/1/gesorteerd/nieuwste-aanbod/oplopend/gezocht/1/'
 
   def perform
-    houses.map &:save
+    while true
+      houses.map &:save
+
+      sleep 10
+    end
   end
 
   def houses
