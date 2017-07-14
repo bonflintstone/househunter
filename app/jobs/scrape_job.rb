@@ -1,5 +1,4 @@
 class ScrapeJob
-  DOMAIN = 'https://www.rochdale.nl/nc'
   BASE_PATH = '/ik-zoek/vrije-sector-huurwoningen/nutehuur/lijst/670/pagina/1/gesorteerd/nieuwste-aanbod/oplopend/gezocht/1/'
 
   def perform
@@ -11,7 +10,7 @@ class ScrapeJob
   end
 
   def houses
-    response = HTTParty.get(DOMAIN + BASE_PATH)
+    response = HTTParty.get(House::DOMAIN + BASE_PATH)
     Nokogiri::HTML(response.body).css('.list-item').map(&method(:parse_house))
   end
 
