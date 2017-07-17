@@ -6,7 +6,7 @@ class House < ApplicationRecord
   after_create :notify
 
   def full_link
-    DOMAIN + link
+    "#{DOMAIN}/#{link}"
   end
 
   private
